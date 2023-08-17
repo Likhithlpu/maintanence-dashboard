@@ -6,7 +6,6 @@
     height: 100vh;
     width: 320px;
     background-color: #fff;
-    overflow-y: auto;
     z-index: 99;
 }
 
@@ -25,7 +24,7 @@
     position: relative;
     padding-top: 10px; /* Added padding to move menu items down */
     max-height: calc(100vh - 120px); /* Adjust for header height */
-    overflow-y: auto; /* Add scrollbar when menu overflows */
+    overflow-y: auto; 
 }
 
 .sidebar__menu__item {
