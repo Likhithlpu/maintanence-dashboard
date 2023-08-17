@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from './components/layout/AppLayout';
 import NavigationBar from './components/navigation/Navigation';
+import 'boxicons/css/boxicons.min.css';
 import {
     Default,
     Air,
