@@ -29,7 +29,7 @@ function App() {
         <BrowserRouter>
             <div id="root">
                 <NavigationBar />
-                <FeedbackForm />
+                
                 <div className="content">
                     <Routes>
                         <Route path="/" element={<AppLayout />}>
@@ -47,6 +47,7 @@ function App() {
                             <Route path="/cm" element={<Crowd />} />
                         </Route>
                     </Routes>
+                    <FeedbackForm />
                 </div>
             </div>
         </BrowserRouter>
