@@ -4,7 +4,7 @@ import AppLayout from './components/layout/AppLayout';
 import NavigationBar from './components/navigation/Navigation';
 import 'boxicons/css/boxicons.min.css';
 import {
-    Default,
+   Default,
     Air,
     Energy,
     Solar,
@@ -14,9 +14,12 @@ import {
     Crowd,
     Wisun
 } from './pages/Blank';
+// import { Default } from './pages/Default';
 
-import Graphs from './pages/Graphs/Graphs';
+import {Charts} from './pages/Default';
+
 import './App.css';
+
 
 function App() {
     return (

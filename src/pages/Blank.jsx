@@ -1,11 +1,10 @@
-const Default = () => {
-    return <div>This is Default page</div>;
-};
-
 const Air = () => {
     return <div>This is Air Quality page</div>;
 };
 
+const Default = () => {
+    return <div>This is Default page</div>;
+};
 
 const Energy = () => {
     return (<div>Hello <br></br>Hello COmes here <br></br>This is Energy Monitoring page</div>);
