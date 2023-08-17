@@ -8,7 +8,7 @@ const Air = () => {
 
 
 const Energy = () => {
-    return <div>This is Energy Monitoring page</div>;
+    return (<div>Hello <br></br>Hello COmes here <br></br>This is Energy Monitoring page</div>);
 };
 
 const Solar = () => {

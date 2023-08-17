@@ -17,3 +17,15 @@ a {
   text-decoration: none;
   color: unset;
 }
+/* Add some CSS to reset default margin and padding for the body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Add a minimum height to make sure the content area always takes up space */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
