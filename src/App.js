@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from './components/layout/AppLayout';
 import NavigationBar from './components/navigation/Navigation';
 import 'boxicons/css/boxicons.min.css';
+import FeedbackForm from './components/FeedbackForm/FeedbackForm';
+
+
 import {
    Default,
     Air,
@@ -26,6 +29,7 @@ function App() {
         <BrowserRouter>
             <div id="root">
                 <NavigationBar />
+                <FeedbackForm />
                 <div className="content">
                     <Routes>
                         <Route path="/" element={<AppLayout />}>
