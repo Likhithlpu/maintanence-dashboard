@@ -15,7 +15,7 @@ const HomePage = () => {
       <div className="section">
         <div className="split-pane">
           <div className="row">
-            <div className="column">Pane 3.1</div>
+            <div className="column"><StackedColumn100Chart  /></div>
             <div className="column">Pane 3.2</div>
           </div>
           <div className="row">

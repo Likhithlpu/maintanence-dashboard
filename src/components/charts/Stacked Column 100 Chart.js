@@ -20,7 +20,7 @@ class StackedColumn100Chart extends Component {
 		const options = {
 			animationEnabled: true,
 			title:{
-				text: "All Time Summer Olympic Medals"
+				text: "Analysis of Outliers,NaN, Frequency"
 			},
 			legend: {
 				verticalAlign: "center",
@@ -36,56 +36,50 @@ class StackedColumn100Chart extends Component {
 			data: [
 			{
 				type: "stackedColumn100",
-				name: "Gold",
+				name: "Outlier",
 				showInLegend: true,
-				color: "#D4AF37",
+				color: "#04d9ff",
 				dataPoints: [
-					{ label: "United States", y:1118},
-					{ label: "Soviet Union", y:473},
-					{ label: "Great Britain", y:273},
-					{ label: "France", y:243},
-					{ label: "Germany", y:269},
-					{ label: "Italy", y:243},
-					{ label: "Sweden", y:195},
-					{ label: "China", y:236},
-					{ label: "Russia", y:194},
-					{ label: "East Germany", y:192}
+					{ label: "AQ", y:1118},
+					{ label: "EM", y:473},
+					{ label: "SL", y:273},
+					{ label: "SR", y:243},
+					{ label: "WE", y:269},
+					{ label: "WM", y:243},
+					{ label: "WN", y:195},
+					{ label: "CM", y:236}
 				]
 			},
 			{
 				type: "stackedColumn100",
-				name: "Silver",
+				name: "NaN",
 				showInLegend: true,
-				color: "#C0C0C0",
+				color: "#006e82",
 				dataPoints: [
-					{ label: "United States",	y: 897},
-					{ label: "Soviet Union", y: 376},
-					{ label: "Great Britain", y: 299},
-					{ label: "France", y: 272},
-					{ label: "Germany", y: 272},
-					{ label: "Italy",	y: 212},
-					{ label: "Sweden", y: 210},
-					{ label: "China",	y: 189},
-					{ label: "Russia", y: 156},
-					{ label: "East Germany", y: 165}
+					{ label: "AQ",	y: 897},
+					{ label: "EM", y: 376},
+					{ label: "SL", y: 299},
+					{ label: "SR", y: 272},
+					{ label: "WE", y: 272},
+					{ label: "WM",	y: 212},
+					{ label: "WN", y: 210},
+					{ label: "CM",	y: 189}
 				]
 			},
 			{
 				type: "stackedColumn100",
-				name: "Bronze",
+				name: "Frequency",
 				showInLegend: true,
-				color: "#CD7F32",
+				color: "#004c59",
 				dataPoints: [
-					{ label: "United States", y: 789},
-					{ label: "Soviet Union", y: 355},
-					{ label: "Great Britain", y: 303},
-					{ label: "France", y: 310},
-					{ label: "Germany",	y: 283},
-					{ label: "Italy", y: 236},
-					{ label: "Sweden", y: 233},
-					{ label: "China", y: 174},
-					{ label: "Russia", y: 187},
-					{ label: "East Germany", y: 162}
+					{ label: "AQ", y: 789},
+					{ label: "EM", y: 355},
+					{ label: "SL", y: 303},
+					{ label: "SR", y: 310},
+					{ label: "WE",	y: 283},
+					{ label: "WM", y: 236},
+					{ label: "WN", y: 233},
+					{ label: "CM", y: 174}
 				]
 			}
 			]
