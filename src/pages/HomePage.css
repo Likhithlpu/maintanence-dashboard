@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: row;
     height: 90vh;
+    background-color: #060516;
+    color: white;
   }
   
   .section {
@@ -10,6 +12,8 @@
     justify-content: space-between;
     flex: 1;
     gap: 10px;
+    height: 100%;
+    padding: 10px;
   }
   
   .split-pane {
@@ -21,6 +25,40 @@
   .single-pane {
     border: 1px solid #ccc;
     padding: 10px;
-    flex: 2; /* Expand the single pane to take more space */
+    flex: 1; /* Expand the single pane to take more space */
   }
   
+
+  .panes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px; /* Gap between panes */
+    margin-top: 10px; /* Add margin at the top */
+  }
+  
+  /* Style for each individual pane */
+  .pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3; /* Example background color */
+    height: 100px; /* Adjust the height as needed */
+    border: 1px solid #ddd; /* Example border */
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    height: 20vh;
+  }
+  
+  .column {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 5px;
+    border: 1px solid #ddd;
+    color: black;
+    text-align: center;
+  }

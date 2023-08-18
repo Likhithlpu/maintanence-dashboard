@@ -3,11 +3,11 @@
     display: flex;
     justify-content: flex-end; 
     height: 90vh;
-    padding: 20px;
+    padding: 3px;
   }
   
   .feedback-form {
-    max-width: 200px;
+    max-width: 400px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
