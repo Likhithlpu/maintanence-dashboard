@@ -16,41 +16,44 @@ function FeedbackForm() {
         <h2>Feedback Form</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="feedback">Name:</label>
+            <label htmlFor="name">Name:</label>
             <textarea
-              id="feedback"
+              id="name"
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               rows="4"
               cols="50"
-            />   
-            <label htmlFor="feedback">Email or Contact:</label>
+            />
+          </div>
+          <div>
+            <label htmlFor="contact">Email or Contact:</label>
             <textarea
-              id="feedback"
+              id="contact"
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               rows="4"
               cols="50"
-              />
-            <label htmlFor="feedback">Feedback:</label>
+            />
+          </div>
+          <div>
+            <label htmlFor="feedbackText">Feedback:</label>
             <textarea
-              id="feedback"
+              id="feedbackText"
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               rows="2"
               cols="30"
             />
-        </div>
-        <button type="submit">Submit </button>
-        <h3>Fixed Issues:</h3>
-        <button type="issue">INTERNET CONNECTIVITY </button>
-        <div style={{ width: '60px' }} />
-        <button type="issue">POWER SUPPLY </button>
-        <div style={{ width: '60px' }} />
-        <button type="issue">HARDWARE ISSUE </button>
-
-      </form>
-    </div>
+          </div>
+          <button type="submit">Submit</button>
+          <h3>Fixed Issues:</h3>
+          <button type="button">INTERNET CONNECTIVITY</button>
+          <div style={{ width: '60px' }} />
+          <button type="button">POWER SUPPLY</button>
+          <div style={{ width: '60px' }} />
+          <button type="button">HARDWARE ISSUE</button>
+        </form>
+      </div>
     </div>
   );
 }

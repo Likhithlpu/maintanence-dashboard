@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from './components/layout/AppLayout';
 import NavigationBar from './components/navigation/Navigation';
 import 'boxicons/css/boxicons.min.css';
-import FeedbackForm from './components/FeedbackForm/FeedbackForm';
+
 
 
 import {
@@ -19,7 +19,7 @@ import {
 } from './pages/Blank';
 // import { Default } from './pages/Default';
 
-import {Charts} from './pages/Default';
+import HomePage from './pages/HomePage';
 
 import './App.css';
 
@@ -33,7 +33,7 @@ function App() {
                 <div className="content">
                     <Routes>
                         <Route path="/" element={<AppLayout />}>
-                            <Route index element={<Default />} />
+                            <Route index element={<HomePage />} />
                             <Route path="/aq" element={<Air />} />
                             <Route path="/em" element={<Energy />} />
 
@@ -47,7 +47,6 @@ function App() {
                             <Route path="/cm" element={<Crowd />} />
                         </Route>
                     </Routes>
-                    <FeedbackForm />
                 </div>
             </div>
         </BrowserRouter>

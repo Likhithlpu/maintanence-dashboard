@@ -1,0 +1,26 @@
+.home-page {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 10px;
+  }
+  
+  .split-pane {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .single-pane {
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex: 2; /* Expand the single pane to take more space */
+  }
+  
