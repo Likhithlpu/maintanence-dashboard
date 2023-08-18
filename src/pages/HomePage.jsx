@@ -2,7 +2,7 @@ import React from 'react';
 import './HomePage.css'; // Import the corresponding CSS file for styling
 import FeedbackForm from '../components/FeedbackForm/FeedbackForm';
 import StackedColumn100Chart from '../components/charts/Stacked Column 100 Chart';
-
+import PieChart from '../components/charts/PieChart';
 const HomePage = () => {
   return (
     <div className="home-page">
@@ -14,9 +14,11 @@ const HomePage = () => {
       </div>
       <div className="section">
         <div className="split-pane">
+
           <div className="row">
-            <div className="column"><StackedColumn100Chart  /></div>
-            <div className="column">Pane 3.2</div>
+              <div className="column"><PieChart /></div>
+
+            <div className="column"><empie /></div>
           </div>
           <div className="row">
             <div className="column">Pane 3.3</div>
