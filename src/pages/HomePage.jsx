@@ -2,7 +2,7 @@ import React from 'react';
 import './HomePage.css'; // Import the corresponding CSS file for styling
 import FeedbackForm from '../components/FeedbackForm/FeedbackForm';
 import StackedColumn100Chart from '../components/charts/Stacked Column 100 Chart';
-import PieChart from '../components/charts/PieChart';
+import {AQStatus,EMStatus,SLStatus,SRStatus,WEStatus,WMStatus,WNStatus,CMStatus} from '../components/charts/PieChart';
 const HomePage = () => {
   return (
     <div className="home-page">
@@ -16,21 +16,21 @@ const HomePage = () => {
         <div className="split-pane">
 
           <div className="row">
-              <div className="column"><PieChart /></div>
+              <div className="column"><AQStatus /></div>
 
-            <div className="column"><empie /></div>
+            <div className="column"><EMStatus /></div>
           </div>
           <div className="row">
-            <div className="column">Pane 3.3</div>
-            <div className="column">Pane 3.4</div>
+            <div className="column"><SLStatus /></div>
+            <div className="column"><SRStatus /></div>
           </div>
           <div className="row">
-            <div className="column">Pane 3.5</div>
-            <div className="column">Pane 3.6</div>
+            <div className="column"><WEStatus /></div>
+            <div className="column"><WMStatus /></div>
           </div>
           <div className="row">
-            <div className="column">Pane 3.7</div>
-            <div className="column">Pane 3.8</div>
+            <div className="column"><WNStatus /></div>
+            <div className="column"><CMStatus /></div>
           </div>
         </div>
       </div>
