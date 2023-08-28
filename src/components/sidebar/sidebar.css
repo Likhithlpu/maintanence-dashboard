@@ -1,0 +1,111 @@
+/* Base styles for larger screens */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 320px;
+    background-color: #fff;
+    z-index: 99;
+}
+
+.sidebar__logo {
+    display: grid;
+    place-items: center;
+    
+    height: 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 60px 10px; /* Added padding */
+    border-bottom: 5px solid #ccc; /* Added border */
+}
+
+.sidebar__menu {
+    position: relative;
+    padding-top: 10px; /* Added padding to move menu items down */
+    max-height: calc(100vh - 120px); /* Adjust for header height */
+    overflow-y: auto; 
+}
+
+.sidebar__menu__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555555;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar__menu__item.active {
+    color: #fff;
+}
+
+.sidebar__menu__item__icon {
+    margin-right: 1rem;
+}
+
+.sidebar__menu__item__icon i {
+    font-size: 1.75rem;
+}
+
+.sidebar__menu__indicator {
+    position: absolute;
+    top: 5;
+    left: 50%;
+    width: calc(100% - 10px);
+    height: 1px;
+    border-radius: 4px;
+    background-color: #308efe;
+    z-index: -1;
+    transform: translateX(-40%);
+    transition: 0.3s ease-in-out;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar__logo {
+        height: 80px;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .sidebar__menu__item {
+        padding: 0.75rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .sidebar__menu__item__icon i {
+        font-size: 1.5rem;
+    }
+
+    .sidebar__menu__indicator {
+        width: calc(100% - 30px);
+    }
+}
+
+/* Custom styles for scrollbar */
+.sidebar__menu__scrollable {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #bbb #f0f0f0; /* Firefox */
+}
+
+.sidebar__menu__scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar__menu__scrollable::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+}
+
+.sidebar__menu__scrollable::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}

@@ -1,0 +1,70 @@
+.home-page {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    background-color: #060516;
+    color: white;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .split-pane {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .single-pane {
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex: 1; /* Expand the single pane to take more space */
+  }
+  
+
+  .panes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px; /* Gap between panes */
+    margin-top: 10px; /* Add margin at the top */
+  }
+  
+  /* Style for each individual pane */
+ 
+
+  
+  .pane {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Add some padding for spacing */
+    box-sizing: border-box; /* Ensure padding is included in dimensions */
+  }
+  
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    height: 20vh;
+  }
+  
+  .column {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 5px;
+    border: 1px solid #ddd;
+    color: black;
+    text-align: center;
+  }

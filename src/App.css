@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #060516;
+  color: #2b2b2b;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+/* Add some CSS to reset default margin and padding for the body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Add a minimum height to make sure the content area always takes up space */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
