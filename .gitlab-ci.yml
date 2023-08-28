@@ -53,7 +53,7 @@
     - exists:
         - Dockerfile
 
-build:web-api:
+build:maintanence-dashboard:
   <<: *build_template
   variables:
     IMAGE_NAME: maintanence-dashboard
