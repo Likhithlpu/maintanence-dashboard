@@ -53,8 +53,8 @@
     - exists:
         - Dockerfile
 
-build:maintanence-dashboard:
+build:maintenance-dashboard:
   <<: *build_template
   variables:
-    IMAGE_NAME: maintanence-dashboard
+    IMAGE_NAME: maintenance-dashboard
     DOCKERFILE_PATH: .
