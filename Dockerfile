@@ -10,18 +10,18 @@ COPY package*.json ./
 # Install project dependencies
 RUN npm install
 
-
 # Copy the entire project to the container
 COPY . .
 
-RUN npm build 
-RUN npm install -g serve 
+RUN npm run build
 
+# Install a lightweight web server
+RUN npm install -g http-server
 
-# Set environment variable to production mode
-ENV NODE_ENV=production
+# Expose the port your app runs on
+EXPOSE 3000
 
+# Start the application with http-server
+#CMD ["http-server", "build"]
 
-# Start the application
-CMD ["serve", "-s", "build"]
-#CMD ["npm", "start"]
+CMD ["npm", "start"]

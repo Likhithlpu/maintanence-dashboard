@@ -6,60 +6,62 @@ const sidebarNavItems = [
     {
         display: 'Overview',
         icon: <i className='bx bx-home'></i>,
-        to: '/',
+        to: '/maintenence-dashboard',
         section: ''
     },
     {
         display: 'Air Quality - AQ',
         icon: <i className='bx bx-wind'></i>,
-        to: '/aq',
+        to: '/maintenence-dashboard/aq',
         section: 'aq'
     },
 
     {
         display: 'Energy Monitoring - EM',
         icon: <i className='bx bx-plug'></i>,
-        to: '/em',
+        to: '/maintenence-dashboard/em',
         section: 'em'
     },
     
     {
         display: 'Solar - SL',
         icon: <i className='bx bx-sun'></i>,
-        to: '/sl',
+        to: '/maintenence-dashboard/sl',
         section: 'sl'
     },
     {
         display: 'Smart Rooms - SR',
         icon: <i className='bx bx-building-house'></i>,
-        to: '/sr',
+        to: '/maintenence-dashboard/sr',
         section: 'sr'
     },
     {
         display: 'Weather Monitoring - WE',
         icon: <i className='bx bx-cloud-lightning'></i>,
-        to: '/we',
+        to: '/maintenence-dashboard/we',
         section: 'we'
     },
     {
         display: 'Water Monitoring - WM',
         icon: <i className='bx bx-water'></i>,
-        to: '/wm',
+        to: '/maintenence-dashboard/wm',
         section: 'wm'
     },
     {
         display: 'WiSUN - WN',
         icon: <i className='bx bx-bulb'></i>,
-        to: '/wn',
+        to: '/maintenence-dashboard/wn',
         section: 'wn'
     },
     {
         display: 'Crowd Monitoring - CM',
         icon: <i className='bx bx-child'></i>,
-        to: '/cm',
+        to: '/maintenence-dashboard/cm',
         section: 'cm'
     }
 ]
+
+
 
 const Sidebar = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -76,12 +78,21 @@ const Sidebar = () => {
         }, 50);
     }, []);
 
-    // change active index
     useEffect(() => {
-        const curPath = window.location.pathname.split('/')[1];
-        const activeItem = sidebarNavItems.findIndex(item => item.section === curPath);
-        setActiveIndex(curPath.length === 0 ? 0 : activeItem);
+        const sidebarItem = sidebarRef.current.querySelector('.sidebar__menu__item');
+        const newStepHeight = sidebarItem.clientHeight; // Get the updated step height
+        setStepHeight(newStepHeight); // Update the stepHeight state
+    
+        // Calculate and set the initial position of the indicator
+        const curPath = window.location.pathname.split('/')[2];
+        const activeItem = curPath ? sidebarNavItems.findIndex(item => item.section === curPath) : 0;
+        const initialPosition = activeItem * newStepHeight; // Use the updated step height here
+        indicatorRef.current.style.transform = `translateX(-50%) translateY(${initialPosition}px)`;
+    
+        setActiveIndex(activeItem); // Use activeItem directly
     }, [location]);
+
+
 
     return <div className='sidebar'>
     <div className="sidebar__logo">
@@ -115,3 +126,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+

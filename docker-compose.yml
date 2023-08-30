@@ -1,6 +1,6 @@
 version: '3'
 services:
-  maintanence-dashboard:
+  maintenence-dashboard:
     build: .
     ports:
       - 8632:3000
