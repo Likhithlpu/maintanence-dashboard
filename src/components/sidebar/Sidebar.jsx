@@ -6,57 +6,57 @@ const sidebarNavItems = [
     {
         display: 'Overview',
         icon: <i className='bx bx-home'></i>,
-        to: '/maintenence-dashboard',
+        to: '/maintenance-dashboard',
         section: ''
     },
     {
         display: 'Air Quality - AQ',
         icon: <i className='bx bx-wind'></i>,
-        to: '/maintenence-dashboard/aq',
+        to: '/maintenance-dashboard/aq',
         section: 'aq'
     },
 
     {
         display: 'Energy Monitoring - EM',
         icon: <i className='bx bx-plug'></i>,
-        to: '/maintenence-dashboard/em',
+        to: '/maintenance-dashboard/em',
         section: 'em'
     },
     
     {
         display: 'Solar - SL',
         icon: <i className='bx bx-sun'></i>,
-        to: '/maintenence-dashboard/sl',
+        to: '/maintenance-dashboard/sl',
         section: 'sl'
     },
     {
         display: 'Smart Rooms - SR',
         icon: <i className='bx bx-building-house'></i>,
-        to: '/maintenence-dashboard/sr',
+        to: '/maintenance-dashboard/sr',
         section: 'sr'
     },
     {
         display: 'Weather Monitoring - WE',
         icon: <i className='bx bx-cloud-lightning'></i>,
-        to: '/maintenence-dashboard/we',
+        to: '/maintenance-dashboard/we',
         section: 'we'
     },
     {
         display: 'Water Monitoring - WM',
         icon: <i className='bx bx-water'></i>,
-        to: '/maintenence-dashboard/wm',
+        to: '/maintenance-dashboard/wm',
         section: 'wm'
     },
     {
         display: 'WiSUN - WN',
         icon: <i className='bx bx-bulb'></i>,
-        to: '/maintenence-dashboard/wn',
+        to: '/maintenance-dashboard/wn',
         section: 'wn'
     },
     {
         display: 'Crowd Monitoring - CM',
         icon: <i className='bx bx-child'></i>,
-        to: '/maintenence-dashboard/cm',
+        to: '/maintenance-dashboard/cm',
         section: 'cm'
     }
 ]
