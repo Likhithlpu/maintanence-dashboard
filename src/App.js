@@ -28,7 +28,7 @@ function App() {
                 
                 <div className="content">
                     <Routes>
-                        <Route path="/maintenence-dashboard/*" element={<AppLayout />}>
+                        <Route path="/maintenance-dashboard/*" element={<AppLayout />}>
                             <Route index element={<HomePage />} />
                             <Route path="aq" element={<Air />} />
                             <Route path="em" element={<Energy />} />
