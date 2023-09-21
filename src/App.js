@@ -4,20 +4,17 @@ import AppLayout from './components/layout/AppLayout';
 import NavigationBar from './components/navigation/Navigation';
 import 'boxicons/css/boxicons.min.css';
 
-import {
-   Default,
-    Air,
-    Energy,
-    Solar,
-    SmartRooms,
-    Weather,
-    Water,
-    Crowd,
-    Wisun
-} from './pages/Blank';
+import Air from './pages/AirQuality';
+import Energy from './pages/EnergyMonitoring';
+import Solar from './pages/SolarMonitoring';
+import SmartRooms from './pages/SmartRooms';
+import Weather from './pages/WeatherMonitoring';
+import Water from './pages/WaterMonitoring';
+import Wisun from './pages/WiSUN';
+import Crowd from './pages/CrowdMonitoring';
+
 
 import HomePage from './pages/HomePage';
-
 import './App.css';
 
 function App() {
