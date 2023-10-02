@@ -1,6 +1,174 @@
-const SmartRooms = () => {
-    return <div>This is Smart Rooms page</div>;
+import React, { useState, useRef, useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const SmartRoomAC = () => {
+  const items = [
+    "SR-AC-KH00-00",
+    "SR-AC-KH00-01",
+    "SR-AC-KH00-02",
+    "SR-AC-KH00-03",
+    "SR-AC-KH00-04",
+    "SR-AC-KH00-05",
+    "SR-AC-KH00-06",
+    "SR-AC-KH00-07",
+    "SR-AC-KH00-08",
+    "SR-AC-KH01-00",
+    "SR-AC-KH01-01",
+    "SR-AC-KH01-02",
+    "SR-AC-KH01-03",
+    "SR-AC-KH01-04",
+    "SR-AC-KH01-05",
+    "SR-AC-KH01-06",
+    "SR-AC-KH01-07",
+    "SR-AC-KH01-08",
+    "SR-AC-KH01-09",
+    "SR-AC-KH01-10",
+    "SR-AC-KH01-11",
+    "SR-AC-KH01-12",
+    "SR-AC-KH01-13",
+    "SR-AC-KH01-14",
+    "SR-AC-KH01-15",
+    "SR-AC-KH01-16",
+    "SR-AC-KH01-17",
+    "SR-AC-KH01-18",
+    "SR-AC-KH01-19",
+    "SR-AC-KH02-00",
+    "SR-AC-KH02-01",
+    "SR-AC-KH02-02",
+    "SR-AC-KH02-03",
+    "SR-AC-KH02-04",
+    "SR-AC-KH02-05",
+    "SR-AC-KH02-06",
+    "SR-AC-KH02-07",
+    "SR-AC-KH02-08",
+    "SR-AC-KH02-09",
+    "SR-AC-KH02-10",
+    "SR-AC-KH02-11",
+    "SR-AC-KH02-12",
+    "SR-AC-KH02-13",
+    "SR-AC-KH02-14",
+    "SR-AC-KH02-15",
+    "SR-AC-KH02-16",
+    "SR-AC-KH02-17",
+    "SR-AC-KH02-18",
+    "SR-AC-KH02-19",
+    "SR-AC-KH02-20",
+    "SR-AC-KH02-21",
+    "SR-AC-KH02-22",
+    "SR-AC-KH02-23",
+    "SR-AC-KH02-24",
+    "SR-AC-KH03-00",
+    "SR-AC-KH03-01",
+    "SR-AC-KH03-02",
+    "SR-AC-KH03-03",
+    "SR-AC-KH03-04",
+    "SR-AC-KH03-05",
+    "SR-AC-KH03-06",
+    "SR-AC-KH03-07",
+    "SR-AC-KH03-08",
+    "SR-AC-KH03-09",
+    "SR-AC-KH03-10",
+    "SR-AC-KH03-11",
+    "SR-AC-KH03-12",
+    "SR-AC-KH03-13",
+    "SR-AC-KH03-14",
+    "SR-AC-KH03-15",
+    "SR-AC-KH03-16",
+    "SR-AC-KH03-17",
+    "SR-AC-KH03-18",
+    "SR-AC-KH03-19",
+    "SR-AC-KH03-20",
+    "SR-AC-KH03-21",
+    "SR-AC-KH95-00",
+    "SR-AC-KH95-01",
+    "SR-AC-KH95-02",
+    "SR-AC-KH95-03",
+    "SR-AC-KH95-04",
+    "SR-AC-KH00-09",
+    "SR-AC-KH00-10",
+    "SR-AC-KH00-11",
+    "SR-AC-KH00-12",
+    "SR-AC-KH00-13",
+    "SR-AC-KH00-14",
+    "SR-AC-KH00-15",
+    "SR-AC-KH00-16",
+    "SR-AC-KH00-17",
+    "SR-AC-KH00-18"
+];
+
+  const sliderRef = useRef(null);
+  const iframeHeight = '80vh'; // Adjust the height as needed
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const handleSelectItem = (item) => {
+    const index = items.indexOf(item);
+    if (sliderRef.current && index !== -1) {
+      sliderRef.current.slickGoTo(index);
+    }
+  };
+
+  useEffect(() => {
+    // Adjust iframe height when the window is resized
+    const handleResize = () => {
+      if (sliderRef.current) {
+        const iframe = sliderRef.current.innerSlider.list.querySelector('iframe');
+        if (iframe) {
+          iframe.style.height = iframeHeight;
+        }
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  const iframeContainerHeight = '780px'; 
+
+  return (
+    <div style={{ maxWidth: '95%', margin: '0 auto'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+        <h1 style={{ color: '#fff', padding: '20px' }}>Smart Room Air Conditioner</h1>
+        <select
+          onChange={(e) => handleSelectItem(e.target.value)}
+          style={{
+            padding: '8px',
+            border: 'none',
+            borderRadius: '4px',
+            backgroundColor: '#333', // Dark background color
+            color: '#fff', // Text color
+            cursor: 'pointer',
+          }}
+        >
+          <option value="">Select an item</option>
+          {items.map((item, index) => (
+            <option key={index} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      </div>
+      <Slider ref={sliderRef} {...settings}>
+        {items.map((item, index) => (
+          <div key={index} style={{ textAlign: 'center', padding: '20px'}}>
+            {/* <h3>{item}</h3> */}
+            <iframe src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76b-sr-ac/smart-room-air-conditioner?kiosk&var-nodeid=${item}&orgId=1`} width="100%" height='600px' style={{height: iframeContainerHeight}}></iframe>
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
 };
 
-
-export default SmartRooms;
+export default SmartRoomAC;

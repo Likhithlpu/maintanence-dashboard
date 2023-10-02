@@ -3,12 +3,15 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const SmartRoomEM = () => {
+const SmartRoomOC = () => {
   const items = [
-    
-    "SR-EM-KH04-00",
-    "SR-EM-KH04-01",
-    "SR-EM-KH04-02"
+    "SR-OC-GW-KH00-00",
+    "SR-OC-GW-KH00-01",
+    "SR-OC-GW-KH95-01",
+    "SR-OC-GW-KH03-00",
+    "SR-OC-GW-KH03-01",
+    "SR-OC-GW-KH03-02",
+    "SR-OC-GW-KH95-00"
 ];
 
   const sliderRef = useRef(null);
@@ -52,7 +55,7 @@ const SmartRoomEM = () => {
   return (
     <div style={{ maxWidth: '95%', margin: '0 auto'}}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-        <h1 style={{ color: '#fff', padding: '20px' }}>Smart Room Energy Monitoring</h1>
+        <h1 style={{ color: '#fff', padding: '20px' }}>Smart Room Occupancy</h1>
         <select
           onChange={(e) => handleSelectItem(e.target.value)}
           style={{
@@ -76,7 +79,7 @@ const SmartRoomEM = () => {
         {items.map((item, index) => (
           <div key={index} style={{ textAlign: 'center', padding: '20px'}}>
             {/* <h3>{item}</h3> */}
-            <iframe src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76b-sr-em/smart-room-energy?kiosk&var-nodeid=${item}&orgId=1`} width="100%" height='600px' style={{height: iframeContainerHeight}}></iframe>
+            {/* <iframe src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76bbcf6b/air-quality?kiosk&var-nodeid=${item}&orgId=1`} width="100%" height='600px' style={{height: iframeContainerHeight}}></iframe> */}
           </div>
         ))}
       </Slider>
@@ -84,4 +87,4 @@ const SmartRoomEM = () => {
   );
 };
 
-export default SmartRoomEM;
+export default SmartRoomOC;
