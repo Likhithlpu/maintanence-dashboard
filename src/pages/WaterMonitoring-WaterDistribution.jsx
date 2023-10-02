@@ -4,7 +4,26 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const WaterDistribution = () => {
-  const items = [];
+  const items = [
+    "WM-WD-VN00-00",
+    "WM-WD-VN90-00",
+    "WM-WD-VN01-00",
+    "WM-WD-VN01-01",
+    "WM-WD-PH01-00",
+    "WM-WD-BN04-00",
+    "WM-WD-AD98-00",
+    "WM-WD-PL00-00",
+    "WM-WD-PH02-00",
+    "WM-WD-PH03-00",
+    "WM-WD-KN00-00",
+    "WM-WD-BN01-00",
+    "WM-WD-KH01-00",
+    "WM-WD-NI00-00",
+    "WM-WD-BN00-00",
+    "WM-WD-PL04-01",
+    "WM-WD-BK04-00",
+    "WM-WD-PL04-00"
+];
 
   const sliderRef = useRef(null);
   const iframeHeight = '80vh'; // Adjust the height as needed

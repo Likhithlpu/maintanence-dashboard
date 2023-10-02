@@ -9,13 +9,15 @@ import Energy from './pages/EnergyMonitoring';
 import Solar from './pages/SolarMonitoring';
 import SmartRooms from './pages/SmartRooms-AC';
 import Weather from './pages/WeatherMonitoring';
-import Water from './pages/WaterMonitoring-WaterDistribution';
-import Wisun from './pages/WiSUN';
+import WaterDistribution from './pages/WaterMonitoring-WaterDistribution';
+import WaterFlow from './pages/WaterMonitoring-WaterFlow';
 import Crowd from './pages/CrowdMonitoring';
 import SmartRoomAC from './pages/SmartRooms-AC';
 import SmartRoomAQ from './pages/SmartRooms-AQ';
 import SmartRoomEM from './pages/SmartRooms-EM';
 import SmartRoomOC from './pages/SmartRooms-OC';
+
+import Wisun from './pages/WiSUN';
 
 import HomePage from './pages/HomePage';
 import './App.css';
@@ -42,8 +44,8 @@ function App() {
                             <Route path="SR-EM" element={<SmartRoomEM />} />
 
                             <Route path="WE" element={<Weather />} />
-                            <Route path="WM-WD" element={<Water />} />
-                            <Route path="WM-WF" element={<Water />} />
+                            <Route path="WM-WD" element={<WaterDistribution />} />
+                            <Route path="WM-WF" element={<WaterFlow />} />
 
                             <Route path="WN" element={<Wisun />} />
                             <Route path="CM" element={<Crowd />} />

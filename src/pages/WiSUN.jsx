@@ -4,7 +4,41 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Wisun = () => {
-  const items = [];
+  const items = [
+    "WN-L001-03",
+    "WN-L002-02",
+    "WN-L003-02",
+    "WN-L004-02",
+    "WN-L005-02",
+    "WN-L006-01",
+    "WN-L007-01",
+    "WN-L008-01",
+    "WN-L009-01",
+    "WN-L010-01",
+    "WN-L011-01",
+    "WN-L012-01",
+    "WN-L013-01",
+    "WN-L014-01",
+    "WN-L015-01",
+    "WN-L016-01",
+    "WN-L017-01",
+    "WN-L018-01",
+    "WN-L019-01",
+    "WN-L020-01",
+    "WN-L021-01",
+    "WN-L022-01",
+    "WN-L023-01",
+    "WN-L024-01",
+    "WN-L025-01",
+    "WN-L026-01",
+    "WN-L027-01",
+    "WN-L028-01",
+    "WN-L029-01",
+    "WN-L030-01",
+"WN-L031-30", "WN-L032-30", "WN-L033-30", "WN-L034-30", "WN-L035-30", "WN-L036-30", "WN-L037-30", "WN-L038-20", 
+"WN-L039-20", "WN-L040-20", "WN-L041-20", "WN-L042-20", "WN-L043-20", "WN-L044-20", "WN-L045-20", "WN-L046-20",
+"WN-L047-20", "WN-L048-20", "WN-L049-20", "WN-L050-20", "WN-L051-20", "WN-L052-20", "WN-L053-20", "WN-L054-20", 
+"WN-VA24-20", "WN-VA64-20", "WN-VC44-20", "WN-NI04-24", "WN-L059-24", "WN-OF04-34"];
 
   const sliderRef = useRef(null);
   const iframeHeight = '80vh'; // Adjust the height as needed
