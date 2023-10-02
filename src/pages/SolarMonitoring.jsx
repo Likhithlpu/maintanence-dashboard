@@ -4,7 +4,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Solar = () => {
-  const items = [];
+  const items = [                
+    "SL-NI03-00",
+  "SL-NI03-01",
+  "SL-VN02-00",
+  "SL-VN02-01",
+  "SL-VN03-00",
+  "SL-VN95-00"];
 
   const sliderRef = useRef(null);
   const iframeHeight = '80vh'; // Adjust the height as needed
