@@ -104,7 +104,7 @@ const Wisun = () => {
       <Slider ref={sliderRef} {...settings}>
         {items.map((item, index) => (
           <div key={index} style={{ textAlign: 'center', padding: '20px'}}>
-            {/* <h3>{item}</h3> */}
+            <h3 style={{color:'white', textAlign:'center'}}>{item}</h3>
             <iframe src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76bbcf6b-wn/wi-sun?kiosk&var-nodeid=${item}&orgId=1`} width="100%" height='600px' style={{height: iframeContainerHeight}}></iframe>
           </div>
         ))}
