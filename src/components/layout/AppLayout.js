@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "../sidebar/Sidebar";
-
+// import Sidebar from "../sidebar/Sidebar";
+//Write <Sidebar /> Before Outlet to get sidebar and change padding to 50px 0px 0px 450px
 const AppLayout = () => {
     return <div style={{
-        padding: '50px 0px 0px 370px'
+        padding: '40px 5px'
     }}>
-        <Sidebar />
+
         <Outlet />
     </div>;
 };

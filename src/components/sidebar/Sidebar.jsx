@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFan,faPeopleArrows,faWind } from '@fortawesome/free-solid-svg-icons';
 import './sidebar.css';
+
 
 const sidebarNavItems = [
     {
@@ -10,57 +13,66 @@ const sidebarNavItems = [
         section: ''
     },
     {
-        display: 'Air Quality - AQ',
-        icon: <i className='bx bx-wind'></i>,
-        to: '/maintenance-dashboard/aq',
-        section: 'aq'
-    },
-
-    {
-        display: 'Energy Monitoring - EM',
-        icon: <i className='bx bx-plug'></i>,
-        to: '/maintenance-dashboard/em',
-        section: 'em'
-    },
-    
-    {
-        display: 'Solar - SL',
-        icon: <i className='bx bx-sun'></i>,
-        to: '/maintenance-dashboard/sl',
-        section: 'sl'
+        display: 'Air Quality',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/AQ',
+        section: 'AQ'
     },
     {
-        display: 'Smart Rooms - SR',
-        icon: <i className='bx bx-building-house'></i>,
-        to: '/maintenance-dashboard/sr',
-        section: 'sr'
+        display: 'Crowd Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/CM',
+        section: 'CM'
     },
     {
-        display: 'Weather Monitoring - WE',
-        icon: <i className='bx bx-cloud-lightning'></i>,
-        to: '/maintenance-dashboard/we',
-        section: 'we'
+        display: 'Energy Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/EM',
+        section: 'EM'
     },
     {
-        display: 'Water Monitoring - WM',
-        icon: <i className='bx bx-water'></i>,
-        to: '/maintenance-dashboard/wm',
-        section: 'wm'
+        display: 'Solar Power Generation',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/SL',
+        section: 'SL'
     },
     {
-        display: 'WiSUN - WN',
-        icon: <i className='bx bx-bulb'></i>,
-        to: '/maintenance-dashboard/wn',
-        section: 'wn'
+        display: 'Smart Rooms Air Conditioner',
+        icon: <FontAwesomeIcon icon={faFan}/>,
+        to: '/maintenance-dashboard/SR-AC',
+        section: 'SR-AC'
     },
     {
-        display: 'Crowd Monitoring - CM',
-        icon: <i className='bx bx-child'></i>,
-        to: '/maintenance-dashboard/cm',
-        section: 'cm'
-    }
-]
-
+        display: 'Smart Rooms Energy Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/SR-EM',
+        section: 'SR-EM'
+    },
+    {
+        display: 'Smart Rooms Occupancy',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/SR-OC',
+        section: 'SR-OC'
+    },
+    {
+        display: 'Weather Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/WE',
+        section: 'WE'
+    },
+    {
+        display: 'Water Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/WM',
+        section: 'WM'
+    },
+    {
+        display: 'WiSUN',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/WN',
+        section: 'WN'
+    },
+];
 
 
 const Sidebar = () => {
