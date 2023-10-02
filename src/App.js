@@ -42,7 +42,8 @@ function App() {
                             <Route path="SR-EM" element={<SmartRoomEM />} />
 
                             <Route path="WE" element={<Weather />} />
-                            <Route path="WM" element={<Water />} />
+                            <Route path="WM-WD" element={<Water />} />
+                            <Route path="WM-WF" element={<Water />} />
 
                             <Route path="WN" element={<Wisun />} />
                             <Route path="CM" element={<Crowd />} />
