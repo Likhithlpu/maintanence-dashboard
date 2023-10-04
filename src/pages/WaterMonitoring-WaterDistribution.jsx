@@ -26,7 +26,10 @@ const WaterDistribution = () => {
 ];
 
   const sliderRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const iframeHeight = '80vh'; // Adjust the height as needed
+  const iframeContainerHeight = '780px';
 
   const settings = {
     dots: true,
@@ -34,6 +37,7 @@ const WaterDistribution = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
   };
 
   const handleSelectItem = (item) => {
@@ -42,7 +46,7 @@ const WaterDistribution = () => {
       sliderRef.current.slickGoTo(index);
     }
   };
-
+    
   useEffect(() => {
     // Adjust iframe height when the window is resized
     const handleResize = () => {
@@ -61,12 +65,26 @@ const WaterDistribution = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const iframeContainerHeight = '780px'; 
+
+  const lazyLoadIframe = (item, index) => {
+    if (index === currentSlide) {
+      return (
+        <iframe title="WiSUN"
+          src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76bb-wm-wd/water-distribution?kiosk&var-nodeid=${item}&orgId=1`}
+          width="100%"
+          height={iframeContainerHeight}
+          style={{ height: iframeContainerHeight }}
+        ></iframe>
+      );
+    } else {
+      return null; // Render nothing for non-visible iframes
+    }
+  };
 
   return (
-    <div style={{ maxWidth: '95%', margin: '0 auto'}}>
+    <div style={{ maxWidth: '95%', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-        <h1 style={{ color: '#fff', padding: '20px' }}>Water Distribution Monitoring</h1>
+        <h1 style={{ color: '#fff', padding: '20px' }}>Water Distribution</h1>
         <select
           onChange={(e) => handleSelectItem(e.target.value)}
           style={{
@@ -88,9 +106,9 @@ const WaterDistribution = () => {
       </div>
       <Slider ref={sliderRef} {...settings}>
         {items.map((item, index) => (
-          <div key={index} style={{ textAlign: 'center', padding: '20px'}}>
-            <h3 style={{color:'white', textAlign:'center'}}>{item}</h3>
-            <iframe src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76bb-wm-wd/water-distribution?kiosk&var-nodeid=${item}&orgId=1`} width="100%" height='600px' style={{height: iframeContainerHeight}}></iframe>
+          <div key={index} style={{ textAlign: 'center', padding: '20px' }}>
+            <h3 style={{ color: 'white', textAlign: 'center' }}>{item}</h3>
+            {lazyLoadIframe(item, index)}
           </div>
         ))}
       </Slider>

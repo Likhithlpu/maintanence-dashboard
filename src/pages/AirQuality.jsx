@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Air = () => {
-  const items = [
+  const items = [    
     "AQ-AN00-00",
     "AQ-FG00-00",
     "AQ-KN00-00",
@@ -14,12 +14,13 @@ const Air = () => {
     "AQ-KH00-00",
     "AQ-MG00-00",
     "AQ-PL00-00",
-    "AQ-VN90-00" 
-    // Add more items as needed
-  ];
+    "AQ-VN90-00" ];
 
   const sliderRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const iframeHeight = '80vh'; // Adjust the height as needed
+  const iframeContainerHeight = '780px';
 
   const settings = {
     dots: true,
@@ -27,6 +28,7 @@ const Air = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
   };
 
   const handleSelectItem = (item) => {
@@ -35,7 +37,7 @@ const Air = () => {
       sliderRef.current.slickGoTo(index);
     }
   };
-
+    
   useEffect(() => {
     // Adjust iframe height when the window is resized
     const handleResize = () => {
@@ -54,10 +56,24 @@ const Air = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const iframeContainerHeight = '780px'; 
+
+  const lazyLoadIframe = (item, index) => {
+    if (index === currentSlide) {
+      return (
+        <iframe title="WiSUN"
+          src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76bbcf6b/air-quality?kiosk&var-nodeid=${item}&orgId=1`}
+          width="100%"
+          height={iframeContainerHeight}
+          style={{ height: iframeContainerHeight }}
+        ></iframe>
+      );
+    } else {
+      return null; // Render nothing for non-visible iframes
+    }
+  };
 
   return (
-    <div style={{ maxWidth: '95%', margin: '0 auto'}}>
+    <div style={{ maxWidth: '95%', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
         <h1 style={{ color: '#fff', padding: '20px' }}>Air Quality</h1>
         <select
@@ -81,9 +97,9 @@ const Air = () => {
       </div>
       <Slider ref={sliderRef} {...settings}>
         {items.map((item, index) => (
-          <div key={index} style={{ textAlign: 'center', padding: '20px'}}>
-            <h3 style={{color:'white', textAlign:'center'}}>{item}</h3>
-            <iframe src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76bbcf6b/air-quality?kiosk&var-nodeid=${item}&orgId=1`} width="100%" height='600px' style={{height: iframeContainerHeight}}></iframe>
+          <div key={index} style={{ textAlign: 'center', padding: '20px' }}>
+            <h3 style={{ color: 'white', textAlign: 'center' }}>{item}</h3>
+            {lazyLoadIframe(item, index)}
           </div>
         ))}
       </Slider>
