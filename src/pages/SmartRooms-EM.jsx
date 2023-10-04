@@ -55,7 +55,7 @@ const SmartRoomEM = () => {
   const lazyLoadIframe = (item, index) => {
     if (index === currentSlide) {
       return (
-        <iframe title="WiSUN"
+        <iframe title="Smart Rooms Energy Monitoring Analytics"
           src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76b-sr-em/smart-room-energy?kiosk&var-nodeid=${item}&orgId=1`}
           width="100%"
           height={iframeContainerHeight}

@@ -142,7 +142,7 @@ const SmartRoomAC = () => {
   const lazyLoadIframe = (item, index) => {
     if (index === currentSlide) {
       return (
-        <iframe title="WiSUN"
+        <iframe title="Smart Rooms Air Conditioner Analytics"
           src={`https://smartcityresearch.iiit.ac.in/grafana/d/f81d3e9d-84c6-43e5-a1e6-f4ba76b-sr-ac/smart-room-air-conditioner?kiosk&var-nodeid=${item}&orgId=1`}
           width="100%"
           height={iframeContainerHeight}
