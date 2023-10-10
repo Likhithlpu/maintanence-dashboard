@@ -7,7 +7,6 @@ import 'boxicons/css/boxicons.min.css';
 import Air from './pages/AirQuality';
 import Energy from './pages/EnergyMonitoring';
 import Solar from './pages/SolarMonitoring';
-import SmartRooms from './pages/SmartRooms-AC';
 import Weather from './pages/WeatherMonitoring';
 import WaterDistribution from './pages/WaterMonitoring-WaterDistribution';
 import WaterFlow from './pages/WaterMonitoring-WaterFlow';
@@ -16,13 +15,16 @@ import SmartRoomAC from './pages/SmartRooms-AC';
 import SmartRoomAQ from './pages/SmartRooms-AQ';
 import SmartRoomEM from './pages/SmartRooms-EM';
 import SmartRoomOC from './pages/SmartRooms-OC';
-
 import Wisun from './pages/WiSUN';
 
 import HomePage from './pages/HomePage';
 import './App.css';
 
+// import FormComponent from './components/FeedbackForm/FormComponent';
+import ChatPopup from './components/FeedbackForm/ChatPopup';
+
 function App() {
+
     return (
         <BrowserRouter>
             <div id="root">
@@ -53,6 +55,7 @@ function App() {
                     </Routes>
                 </div>
             </div>
+            <ChatPopup />
         </BrowserRouter>
     );
 }

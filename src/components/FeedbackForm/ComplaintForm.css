@@ -1,0 +1,81 @@
+/* src/components/ComplaintForm.css */
+.complaint-form {
+  background-color: #333; /* Dark background color */
+  color: white; /* Text color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* margin-top: 20px; */
+  /* max-height: 400px; */
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  /* margin-bottom: 20px; */
+}
+
+.row {
+  height: auto;
+}
+
+.form-input {
+  width: 120%;
+  /* max-height: 60%; */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Input focus effect */
+}
+
+.form-submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #7a3bff; /* Button background color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.form-submit-button:hover {
+  background-color: #5d2db1; /* Button background color on hover */
+}
+
+.confirmation-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.confirmation-message .btn_purp {
+  background-color: #7a3bff;
+}
+
+.confirmation-message .btn_purp:hover {
+  background-color: #5d2db1;
+}
+
+.form-submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #7a3bff; /* Button background color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth hover effect */
+}
+
+.form-submit-button:hover {
+  background-color: #5d2db1; /* Button background color on hover */
+}

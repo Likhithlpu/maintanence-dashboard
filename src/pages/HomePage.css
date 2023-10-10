@@ -1,9 +1,10 @@
 .home-page {
     display: flex;
     flex-direction: row;
-    height: 90vh;
+    height: 95vh;
     background-color: #060516;
     color: white;
+    padding: 40px 0px;
   }
   
   .section {

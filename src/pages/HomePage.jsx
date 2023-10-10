@@ -1,8 +1,5 @@
 import React from 'react';
 import './HomePage.css'; // Import the corresponding CSS file for styling
-import FeedbackForm from '../components/FeedbackForm/FeedbackForm';
-import StackedColumn100Chart from '../components/charts/Stacked Column 100 Chart';
-import {AQStatus,EMStatus,SLStatus,SRStatus,WEStatus,WMStatus,WNStatus,CMStatus} from '../components/charts/PieChart';
 const HomePage = () => {
   return (
     <div className="home-page">
