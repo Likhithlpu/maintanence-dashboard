@@ -8,7 +8,7 @@ import './ComplaintForm.css';
 
 const api = axios.create({
   // baseURL: 'http://localhost:5002', // Replace with your actual backend URL
-  baseURL: 'http://10.4.20.161:5002'
+  baseURL: 'https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api'
 });
 
 const ComplaintForm = () => {
