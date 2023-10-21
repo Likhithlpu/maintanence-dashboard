@@ -35,6 +35,13 @@ const ComplaintForm = () => {
     setComplaint(e.target.value);
   };
 
+  const handleNodeidChange = (e) => {
+    setnodeId(e.target.value);
+  };
+
+  const handleVerticalChange = (e) => {
+    setVertical(e.target.value);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -44,6 +51,8 @@ const ComplaintForm = () => {
         name,
         email,
         contactNumber,
+        Vertical,
+        nodeId,
         complaint,
       });
       setIsSubmitted(true); // Set the submission state to true
@@ -155,7 +164,7 @@ const ComplaintForm = () => {
                 type="text"
                 placeholder="E.g. AQ"
                 value={Vertical}
-                onChange={handleContactNumberChange}
+                onChange={handleVerticalChange}
                 className="form-input"
                 required
               />
@@ -175,7 +184,7 @@ const ComplaintForm = () => {
                 type="text"
                 placeholder="E.g. AQ-AN00-00"
                 value={nodeId}
-                onChange={handleContactNumberChange}
+                onChange={handleNodeidChange}
                 className="form-input"
                 required
               />

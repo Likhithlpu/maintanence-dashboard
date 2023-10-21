@@ -124,11 +124,11 @@ const Air = () => {
   return (
     <div style={{ maxWidth: '95%', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-        <h1 style={{ color: '#fff', padding: '20px' }}>Air Quality</h1>
+        <h1 style={{ color: '#fff', padding: '50px 20px 0px 0px' }}>Air Quality</h1>
         <select
           onChange={(e) => handleSelectItem(e.target.value)}
           style={{
-            padding: '8px',
+            padding: '10px 10px 0px 0px',
             border: 'none',
             borderRadius: '4px',
             backgroundColor: '#333', // Dark background color
@@ -146,7 +146,7 @@ const Air = () => {
       </div>
       <Slider ref={sliderRef} {...settings}>
         {items.map((item, index) => (
-          <div key={index} style={{ textAlign: 'center', padding: '20px' }}>
+          <div key={index} style={{ textAlign: 'center', padding: '0px' }}>
             <h3 style={{ color: 'white', textAlign: 'center' }}>{item}</h3>
             {lazyLoadIframe(item, index)}
           </div>
