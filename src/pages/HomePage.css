@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px; /* Add some padding for spacing */
+    padding: 0px; /* Add some padding for spacing */
     box-sizing: border-box; /* Ensure padding is included in dimensions */
   }
   
