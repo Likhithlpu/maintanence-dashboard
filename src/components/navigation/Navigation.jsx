@@ -1,20 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 import './NavigationBar.css';
-import Logo1 from './images/iiith.png'; // Import your logo image files
-import Logo2 from './images/scrc_logo.png';
+import IITHLOGO from './images/iiith.png';
+import SCRCLOGO from './images/scrc_logo.png';
 
 const NavigationBar = () => {
-    return (
-        <nav className="navbar">
-            <div className="navbar__logo">
-                <img src={Logo1} alt="Logo 1" />
-            </div>
-            <div className="navbar__logo">
-                <img src={Logo2} alt="Logo 2" />
-            </div>
-            <div className="navbar__dashboard">MAINTENANCE DASHBOARD</div>
-        </nav>
-    );
+  return (
+    <nav className="navbar">
+      <Link to="/maintenance-dashboard"> {/* Add Link to the root route */}
+        <div className="navbar__logo">
+          <img src={IITHLOGO} alt="IIITH Logo" />
+        </div>
+      </Link>
+      <Link to="/maintenance-dashboard"> {/* Add Link to the root route */}
+        <div className="navbar__logo">
+          <img src={SCRCLOGO} alt="Smart City Living Lab Logo" />
+        </div>
+      </Link>
+      <div className="navbar__dashboard">MAINTENANCE DASHBOARD</div>
+    </nav>
+  );
 };
 
 export default NavigationBar;
