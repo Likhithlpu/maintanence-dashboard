@@ -9,13 +9,9 @@ const api = axios.create({
   // baseURL: 'http://localhost:5002', // Replace with your actual backend URL
   baseURL: 'https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api'
 });
-const Solar = () => {
-  const items = [                
-  "SL-NI03-00",
-  "SL-NI03-01",
-  "SL-VN02-00",
-  "SL-VN02-01",
-  "SL-VN03-00",];
+const SolarEM = () => {
+  const items = [  
+  "SL-VN95-00"];
 
 
   const sliderRef = useRef(null);
@@ -150,4 +146,4 @@ const Solar = () => {
   );
 };
 
-export default Solar;
+export default SolarEM;
