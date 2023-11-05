@@ -94,10 +94,11 @@ const Solar = () => {
   }, [currentSlide]);
 
   const lazyLoadIframe = (item, index) => {
+    const datatable='data_solardatalatest'
     if (status === 'Inactive') {
       return (
         <iframe
-          title="Air Quality Analytics"
+          title="Solar Monitoring Analytics"
           src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/ca895582-79c6-4b57-b95c-17135ff82b44/inactive-dashboard?kiosk&var-nodeid=${item}&orgId=1`}
           width="100%"
           height={iframeContainerHeight}
@@ -108,7 +109,7 @@ const Solar = () => {
       return (
         <iframe
           title="Solar Monitorning Analytics"
-          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/maintenance-sl/solar-monitoring?kiosk&var-nodeid=${item}&orgId=1`}
+          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/nodestatus/node-status?orgId=1&kiosk&var-nodeid=${item}&var-tablename=${datatable}`}
           width="100%"
           height={iframeContainerHeight}
           style={{ height: iframeContainerHeight }}

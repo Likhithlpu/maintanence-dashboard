@@ -101,6 +101,7 @@ const Air = () => {
   }, [currentSlide]);
 
   const lazyLoadIframe = (item, index) => {
+    const datatable='data_airqualitydatalatest'
     if (status === 'Inactive') {
       return (
         <iframe
@@ -116,7 +117,7 @@ const Air = () => {
       return (
         <iframe
           title="Air Quality Analytics"
-          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/maintenance-aq/air-quality?kiosk&var-nodeid=${item}&orgId=1`}
+          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/nodestatus/node-status?orgId=1&kiosk&var-nodeid=${item}&var-tablename=${datatable}`}
           width="100%"
           height={iframeContainerHeight}
           style={{ height: iframeContainerHeight }}
