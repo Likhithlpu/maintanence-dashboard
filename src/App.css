@@ -4,7 +4,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
+
 }
 
 body {
@@ -18,14 +19,55 @@ a {
   color: unset;
 }
 /* Add some CSS to reset default margin and padding for the body */
-body {
+/* body {
   margin: 0;
   padding: 0;
-}
+} */
 
 /* Add a minimum height to make sure the content area always takes up space */
-#root {
+/* #root { */
+  /* min-height: 100vh; */
+  /* display: flex; */
+  /* flex-direction: column; */
+/* } */
+
+/* Form CSS */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

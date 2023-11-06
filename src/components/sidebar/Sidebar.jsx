@@ -1,65 +1,79 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFan,faPeopleArrows,faWind } from '@fortawesome/free-solid-svg-icons';
 import './sidebar.css';
+
 
 const sidebarNavItems = [
     {
         display: 'Overview',
         icon: <i className='bx bx-home'></i>,
-        to: '/',
+        to: '/maintenance-dashboard',
         section: ''
     },
     {
-        display: 'Air Quality - AQ',
-        icon: <i className='bx bx-wind'></i>,
-        to: '/aq',
-        section: 'aq'
+        display: 'Air Quality',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/AQ',
+        section: 'AQ'
     },
+    {
+        display: 'Crowd Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/CM',
+        section: 'CM'
+    },
+    {
+        display: 'Energy Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/EM',
+        section: 'EM'
+    },
+    {
+        display: 'Solar Power Generation',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/SL',
+        section: 'SL'
+    },
+    {
+        display: 'Smart Rooms Air Conditioner',
+        icon: <FontAwesomeIcon icon={faFan}/>,
+        to: '/maintenance-dashboard/SR-AC',
+        section: 'SR-AC'
+    },
+    {
+        display: 'Smart Rooms Energy Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/SR-EM',
+        section: 'SR-EM'
+    },
+    {
+        display: 'Smart Rooms Occupancy',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/SR-OC',
+        section: 'SR-OC'
+    },
+    {
+        display: 'Weather Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/WE',
+        section: 'WE'
+    },
+    {
+        display: 'Water Monitoring',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/WM',
+        section: 'WM'
+    },
+    {
+        display: 'WiSUN',
+        icon: <FontAwesomeIcon icon={faPeopleArrows}/>,
+        to: '/maintenance-dashboard/WN',
+        section: 'WN'
+    },
+];
 
-    {
-        display: 'Energy Monitoring - EM',
-        icon: <i className='bx bx-plug'></i>,
-        to: '/em',
-        section: 'em'
-    },
-    
-    {
-        display: 'Solar - SL',
-        icon: <i className='bx bx-sun'></i>,
-        to: '/sl',
-        section: 'sl'
-    },
-    {
-        display: 'Smart Rooms - SR',
-        icon: <i className='bx bx-building-house'></i>,
-        to: '/sr',
-        section: 'sr'
-    },
-    {
-        display: 'Weather Monitoring - WE',
-        icon: <i className='bx bx-cloud-lightning'></i>,
-        to: '/we',
-        section: 'we'
-    },
-    {
-        display: 'Water Monitoring - WM',
-        icon: <i className='bx bx-water'></i>,
-        to: '/wm',
-        section: 'wm'
-    },
-    {
-        display: 'WiSUN - WN',
-        icon: <i className='bx bx-bulb'></i>,
-        to: '/wn',
-        section: 'wn'
-    },
-    {
-        display: 'Crowd Monitoring - CM',
-        icon: <i className='bx bx-child'></i>,
-        to: '/cm',
-        section: 'cm'
-    }
-]
 
 const Sidebar = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -76,12 +90,21 @@ const Sidebar = () => {
         }, 50);
     }, []);
 
-    // change active index
     useEffect(() => {
-        const curPath = window.location.pathname.split('/')[1];
-        const activeItem = sidebarNavItems.findIndex(item => item.section === curPath);
-        setActiveIndex(curPath.length === 0 ? 0 : activeItem);
+        const sidebarItem = sidebarRef.current.querySelector('.sidebar__menu__item');
+        const newStepHeight = sidebarItem.clientHeight; // Get the updated step height
+        setStepHeight(newStepHeight); // Update the stepHeight state
+    
+        // Calculate and set the initial position of the indicator
+        const curPath = window.location.pathname.split('/')[2];
+        const activeItem = curPath ? sidebarNavItems.findIndex(item => item.section === curPath) : 0;
+        const initialPosition = activeItem * newStepHeight; // Use the updated step height here
+        indicatorRef.current.style.transform = `translateX(-50%) translateY(${initialPosition}px)`;
+    
+        setActiveIndex(activeItem); // Use activeItem directly
     }, [location]);
+
+
 
     return <div className='sidebar'>
     <div className="sidebar__logo">
@@ -115,3 +138,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+

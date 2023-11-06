@@ -1,9 +1,10 @@
 .home-page {
     display: flex;
     flex-direction: row;
-    height: 90vh;
+    height: 95vh;
     background-color: #060516;
     color: white;
+    padding: 40px 0px;
   }
   
   .section {
@@ -47,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px; /* Add some padding for spacing */
+    padding: 0px; /* Add some padding for spacing */
     box-sizing: border-box; /* Ensure padding is included in dimensions */
   }
   

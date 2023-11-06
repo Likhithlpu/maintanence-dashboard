@@ -8,7 +8,6 @@
     color: white;
     padding: 10px 20px;
     z-index: 100;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,13 +23,13 @@
 .navbar__logo img {
     width: 50px;
     height: auto;
-    margin-right: 15px; /* Separation distance between logos */
+    margin-right: 15px;
 }
 
 .navbar__dashboard {
     font-size: 1.5rem;
-    flex-grow: 1; /* Allow dashboard text to take available space */
-    text-align: center; /* Center text */
+    flex-grow: 1;
+    text-align: center;
 }
 
 /* Responsive adjustments for smaller screens */
@@ -50,12 +49,11 @@
     }
 }
 
-
-/* No need for position: fixed; for navbar, as we're using Flexbox to achieve the layout */
+/* Common styles for all screen sizes */
 .navbar {
     background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,7 +67,7 @@
 }
 
 .navbar__logo img {
-    width: 40px;
+    width: 80px;
     height: auto;
     margin-right: 15px;
 }
