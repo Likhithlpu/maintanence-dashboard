@@ -41,7 +41,7 @@ The app will run on `http://localhost:3000`.
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available under the [xLicense](LICENSE).
 
 ---
 
