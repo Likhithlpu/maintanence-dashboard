@@ -186,7 +186,7 @@ const SmartRoomAC = () => {
       return (
         <iframe
           title="Smart Rooms Air Conditioner Analytics"
-          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/ca895582-79c6-4b57-b95c-17135ff82b44/inactive-dashboard?kiosk&var-nodeid=${item}&orgId=1`}
+          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/ca895582-79c6-4b57-b95c-17135ff82b44/inactive-dashboard?kiosk&var-nodeid=${item}&var-datatable=${datatable}&orgId=1`}
           width="100%"
           height={iframeContainerHeight}
           style={{ height: iframeContainerHeight }}
