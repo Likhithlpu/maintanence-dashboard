@@ -116,7 +116,7 @@ useEffect(() => {
     window.removeEventListener('keydown', handleArrowKeyPress);
     window.removeEventListener('resize', handleResize);
   };
-}, [currentSlide]);
+}, [currentSlide, fetchData]);
 
 const lazyLoadIframe = (item, index) => {
   const datatable='data_wisunnodesdatalatest'
