@@ -99,7 +99,7 @@ const lazyLoadIframe = (item, index) => {
     return (
         <iframe
           title="Smart Rooms Energy Monitoring Analyticss"
-          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/ca895582-79c6-4b57-b95c-17135ff82b44/inactive-dashboard?kiosk&var-nodeid=${item}&var-datatable=${datatable}&orgId=1`}
+          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/ca895582-79c6-4b57-b95c-17135ff82b44/inactive-dashboard?kiosk&refresh=5s&var-nodeid=${item}&var-datatable=${datatable}&orgId=1`}
           width="100%"
           height={iframeContainerHeight}
           style={{ height: iframeContainerHeight }}
@@ -109,7 +109,7 @@ const lazyLoadIframe = (item, index) => {
     return (
       <iframe
         title="Smart Rooms Energy Monitoring Analytics"
-        src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/nodestatus/node-status?orgId=1&kiosk&var-nodeid=${item}&var-tablename=${datatable}`}
+        src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/nodestatus/node-status?orgId=1&kiosk&refresh=5s&var-nodeid=${item}&var-tablename=${datatable}`}
         width="100%"
         height={iframeContainerHeight}
         style={{ height: iframeContainerHeight }}
