@@ -1,14 +1,14 @@
-// src/components/ComplaintForm.js
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Card, Button, Form, Alert, InputGroup, Row, Col } from 'react-bootstrap';
-import { FiUser, FiMail, FiPhone, FiMessageSquare,FiBox } from 'react-icons/fi'; // Replace with your Flaticon icons
+import { FiUser, FiMail, FiPhone, FiMessageSquare, FiBox } from 'react-icons/fi';
+import { Card, Form, Alert, InputGroup, Row, Col, Button } from 'react-bootstrap';
+
 import { BsLayoutTextSidebarReverse } from 'react-icons/bs';
 import './ComplaintForm.css';
 
 const api = axios.create({
-  // baseURL: 'http://localhost:5002', // Replace with your actual backend URL
-  baseURL: 'https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api'
+  // baseURL: 'http://localhost:5002',
+  baseURL: 'https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api',
 });
 
 const ComplaintForm = () => {
@@ -18,7 +18,8 @@ const ComplaintForm = () => {
   const [Vertical, setVertical] = useState('');
   const [nodeId, setnodeId] = useState('');
   const [complaint, setComplaint] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false); // Track submission state
+  const [feedbackType, setFeedbackType] = useState('complaint');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -43,12 +44,19 @@ const ComplaintForm = () => {
   const handleVerticalChange = (e) => {
     setVertical(e.target.value);
   };
+
+  const handleFeedbackTypeChange = (e) => {
+    setFeedbackType(e.target.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Send the complaint data to the server
-      await api.post('/api/complaints', {
+      const apiEndpoint =
+        feedbackType === 'feedback' ? '/api/feedback' : '/api/complaints';
+
+      await api.post(apiEndpoint, {
         name,
         email,
         contactNumber,
@@ -56,14 +64,12 @@ const ComplaintForm = () => {
         nodeId,
         complaint,
       });
-      setIsSubmitted(true); // Set the submission state to true
+      setIsSubmitted(true);
     } catch (error) {
-      console.error('Error storing complaint:', error);
-      // You can add code here to handle errors, such as displaying an error message.
+      console.error('Error storing complaint/feedback:', error);
     }
   };
 
-  // Render confirmation message if the form is submitted
   if (isSubmitted) {
     return (
       <div className="confirmation-message">
@@ -81,7 +87,7 @@ const ComplaintForm = () => {
             <div className="padding10px">
               <Button
                 className="btn_purp"
-                onClick={() => window.location.reload()} // Reload the page to submit a new request
+                onClick={() => window.location.reload()}
               >
                 Submit a New Request
               </Button>
@@ -92,14 +98,15 @@ const ComplaintForm = () => {
     );
   }
 
-  // Render the form if it's not submitted
   return (
     <form onSubmit={handleSubmit} className="complaint-form">
       <h2 className="form-title">Feedback Form</h2>
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label><FiUser />  Name:</Form.Label>
+            <Form.Label>
+              <FiUser /> Name:
+            </Form.Label>
             <InputGroup>
               <input
                 type="text"
@@ -116,11 +123,10 @@ const ComplaintForm = () => {
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label><FiMail />  Email:</Form.Label>
+            <Form.Label>
+              <FiMail /> Email:
+            </Form.Label>
             <InputGroup>
-              <InputGroup.Text>
-                
-              </InputGroup.Text>
               <input
                 type="email"
                 placeholder="E.g. abc@gmail.com"
@@ -136,11 +142,10 @@ const ComplaintForm = () => {
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label><FiPhone /> Phone:</Form.Label>
+            <Form.Label>
+              <FiPhone /> Phone:
+            </Form.Label>
             <InputGroup>
-              <InputGroup.Text>
-                
-              </InputGroup.Text>
               <input
                 type="text"
                 placeholder="E.g. 9999999999"
@@ -156,19 +161,34 @@ const ComplaintForm = () => {
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label><FiBox /> Vertical Name:</Form.Label>
+            <Form.Label>
+              <FiBox /> Vertical Name:
+            </Form.Label>
             <InputGroup>
-              <InputGroup.Text>
-                
-              </InputGroup.Text>
-              <input
+              <Form.Select
                 type="text"
                 placeholder="E.g. AQ"
                 value={Vertical}
                 onChange={handleVerticalChange}
                 className="form-input"
                 required
-              />
+              >
+                <option value="AQ">Air Quality</option>
+                <option value="SL">Solar Monitoring</option>
+                <option value="SL-Energy Meter">Solar Energy Meter</option>
+                <option value="WM-WD">Water Distribution</option>
+                <option value="WM-WF-Shenitech">Water Flow Shenitech</option>
+                <option value="WM-WF-Retrofit">Water Flow Retrofit</option>
+                <option value="WM-WF-Kristnam">Water Flow Kristnam</option>
+                <option value="SR-AC">Smart Room Air Conditioner</option>
+                <option value="SR-AQ">Smart Room Air Quality</option>
+                <option value="SR-EM">Smart Room Energy Meter</option>
+                <option value="SR-OC">Smart Room Occupancy</option>
+                <option value="CM">Crowd Monitoring</option>
+                <option value="WN-FAN10FSK">Wi-SUN FAN10FSK</option>
+                <option value="WN-FAN11FSK">Wi-SUN FAN11FSK</option>
+                <option value="WN-FAN11OFDM">Wi-SUN FAN11OFDM</option>
+              </Form.Select>
             </InputGroup>
           </Form.Group>
         </Col>
@@ -176,11 +196,10 @@ const ComplaintForm = () => {
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label><BsLayoutTextSidebarReverse /> Node ID:</Form.Label>
+            <Form.Label>
+              <BsLayoutTextSidebarReverse /> Node ID:
+            </Form.Label>
             <InputGroup>
-              <InputGroup.Text>
-                
-              </InputGroup.Text>
               <input
                 type="text"
                 placeholder="E.g. AQ-AN00-00"
@@ -196,10 +215,30 @@ const ComplaintForm = () => {
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label><FiMessageSquare /> Complaint/Feedback:</Form.Label>
+            <Form.Label>
+              <FiMessageSquare /> Type of Request
+            </Form.Label>
             <InputGroup>
-              <InputGroup.Text>
-              </InputGroup.Text>
+              <Form.Select
+                value={feedbackType}
+                onChange={handleFeedbackTypeChange}
+                className="form-input"
+                required
+              >
+                <option value="complaint">Complaint</option>
+                <option value="feedback">Feedback</option>
+              </Form.Select>
+            </InputGroup>
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Form.Group className="mb-3">
+            <Form.Label>
+              <FiMessageSquare /> Complaint/Feedback:
+            </Form.Label>
+            <InputGroup>
               <textarea
                 value={complaint}
                 onChange={handleComplaintChange}
