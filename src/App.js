@@ -30,6 +30,8 @@ import WisunFan11OFDM from './pages/WiSUN-FAN11OFDM';
 
 import HomePage from './pages/HomePage';
 import ServerStats from './pages/ServerStats';
+
+import ComplaintList from './components/ComplaintList/ComplaintList';
 import './App.css';
 
 // import FormComponent from './components/FeedbackForm/FormComponent';
@@ -70,8 +72,10 @@ function App() {
                             <Route path="WN-FAN11FSK" element={<WisunFAN11FSK />} />
                             <Route path="WN-FAN11OFDM" element={<WisunFan11OFDM />} />
 
-                            <Route path="CM" element={<Crowd />} />
+                            <Route path="CM" element={<Crowd />} />'
+                        
                             <Route path="serverstats" element={<ServerStats />} />
+                            <Route path="complaints" element={<ComplaintList />} />
                         </Route>
                     </Routes>
                 </div>
