@@ -12,7 +12,7 @@ const ComplaintList = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:5002/api/complaints/active');
+        const response = await axios.get('https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api/api/complaints/active');
         setComplaints(response.data);
       } catch (error) {
         console.error('Error fetching complaints:', error);
@@ -25,7 +25,7 @@ const ComplaintList = () => {
   // Function to handle closing a complaint
   const handleCloseComplaint = async (id) => {
     try {
-      await axios.put(`http://127.0.0.1:5002/api/complaints/${id}/close`);
+      await axios.put(`https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api/api/complaints/${id}/close`);
       // Update the local state to remove the closed complaint
       setComplaints((prevComplaints) => prevComplaints.filter((complaint) => complaint.sno !== id));
     } catch (error) {
