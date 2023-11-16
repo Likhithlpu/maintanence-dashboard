@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { FiUser, FiMail, FiPhone, FiMessageSquare, FiBox } from 'react-icons/fi';
-import { Card, Form, InputGroup, Row, Col, Button } from 'react-bootstrap';
+import { FiUser, FiMail, FiPhone, FiMessageSquare, FiBox, FiArrowLeft } from 'react-icons/fi';
 import { BsLayoutTextSidebarReverse } from 'react-icons/bs';
+import { Card, Form, InputGroup, Row, Col, Button } from 'react-bootstrap';
 import './ComplaintForm.css';
 
 const api = axios.create({
@@ -165,9 +165,15 @@ const ComplaintForm = () => {
       case 2:
         return (
           <div>
-            <h2 className="form-title">
-              {feedbackType === 'feedback' ? 'Feedback' : 'Complaint'} Form
-            </h2>
+            <div className="header-with-back">
+              <FiArrowLeft
+                className="back-arrow"
+                onClick={() => setStage(1)}
+              />
+              <h2 className="form-title">
+                {feedbackType === 'feedback' ? 'Feedback' : 'Complaint'} Form
+              </h2>
+            </div>
             {feedbackType === 'feedback' ? (
               <Row>
                 <Col>
@@ -262,9 +268,12 @@ const ComplaintForm = () => {
                 </Row>
               </div>
             )}
-            <button type="submit" className="form-submit-button">
-              Submit Review
-            </button>
+            <div>
+
+              <button type="submit" className="form-submit-button">
+                Submit Review
+              </button>
+            </div>
           </div>
         );
 

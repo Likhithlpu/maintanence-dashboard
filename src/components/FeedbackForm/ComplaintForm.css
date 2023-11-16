@@ -87,3 +87,37 @@
 .form-submit-button:hover {
   background-color: #5d2db1; /* Button background color on hover */
 }
+
+/* Add these styles to your existing CSS or create a new CSS file */
+
+/* Add this style to make the back arrow button the same size as the heading */
+.back-arrow {
+  font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+/* Add this style to center the back arrow vertically with the heading */
+.header-with-back {
+  display: flex;
+  align-items: center;
+}
+
+/* Add this style to add space between the back arrow and the title */
+.header-with-back .form-title {
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+
+/* Add this style to style the back button */
+.back-button {
+  background-color: #007bff; /* Example background color */
+  color: white;
+  padding: 10px 20px; /* Adjust the padding as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+/* Add this style to remove default button styles */
+.back-button:focus {
+  outline: none;
+}
