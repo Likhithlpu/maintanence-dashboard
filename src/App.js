@@ -32,6 +32,7 @@ import HomePage from './pages/HomePage';
 import ServerStats from './pages/ServerStats';
 
 import ComplaintList from './components/ComplaintList/ComplaintList';
+import FeedbackList from './components/ComplaintList/FeedbackList';
 import './App.css';
 
 // import FormComponent from './components/FeedbackForm/FormComponent';
@@ -76,6 +77,7 @@ function App() {
                         
                             <Route path="serverstats" element={<ServerStats />} />
                             <Route path="complaints" element={<ComplaintList />} />
+                            <Route path="feedback" element={<FeedbackList />} />
                         </Route>
                     </Routes>
                 </div>
