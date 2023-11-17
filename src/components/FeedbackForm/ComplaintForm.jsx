@@ -6,8 +6,8 @@ import { Card, Form, InputGroup, Row, Col, Button } from 'react-bootstrap';
 import './ComplaintForm.css';
 
 const api = axios.create({
-  baseURL: 'https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api',
-  // baseURL: 'http://127.0.0.1:5002/',
+  // baseURL: 'https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api',
+  baseURL: 'http://127.0.0.1:5002/',
 });
 
 const ComplaintForm = () => {
@@ -18,6 +18,7 @@ const ComplaintForm = () => {
   const [Vertical, setVertical] = useState('');
   const [nodeId, setnodeId] = useState('');
   const [complaint, setComplaint] = useState('');
+  const [feedback, setFeedback] = useState('');
   const [feedbackType, setFeedbackType] = useState('complaint');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -35,6 +36,10 @@ const ComplaintForm = () => {
 
   const handleComplaintChange = (e) => {
     setComplaint(e.target.value);
+  };
+
+  const handleFeedbackChange = (e) => {
+    setFeedback(e.target.value);
   };
 
   const handleNodeidChange = (e) => {
@@ -56,15 +61,12 @@ const ComplaintForm = () => {
       const apiEndpoint =
         feedbackType === 'feedback' ? '/api/feedback' : '/api/complaints';
 
-      await api.post(apiEndpoint, {
-        name,
-        email,
-        contactNumber,
-        Vertical,
-        nodeId,
-        complaint,
-      });
-      setIsSubmitted(true);
+    const requestData = feedbackType === 'feedback'
+        ? { name, email, contactNumber, feedback }
+        : { name, email, contactNumber, Vertical, nodeId, complaint };
+      
+    await api.post(apiEndpoint, requestData);
+    setIsSubmitted(true);
     } catch (error) {
       console.error('Error storing complaint/feedback:', error);
     }
@@ -184,8 +186,8 @@ const ComplaintForm = () => {
                     </Form.Label>
                     <InputGroup>
                       <textarea
-                        value={complaint}
-                        onChange={handleComplaintChange}
+                        value={feedback}
+                        onChange={handleFeedbackChange}
                         placeholder="Enter your feedback..."
                         className="form-input"
                         required
