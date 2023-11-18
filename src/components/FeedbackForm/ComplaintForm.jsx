@@ -15,7 +15,7 @@ const ComplaintForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [contactNumber, setContactNumber] = useState('');
-  const [Vertical, setVertical] = useState('');
+  const [Vertical, setVertical] = useState('AQ');
   const [nodeId, setnodeId] = useState('');
   const [complaint, setComplaint] = useState('');
   const [feedback, setFeedback] = useState('');
@@ -77,7 +77,7 @@ const ComplaintForm = () => {
       case 1:
         return (
           <div>
-            <h2 className="form-title">Basic Information</h2>
+            <h2 className="form-title">Details</h2>
             <Row>
               <Col>
                 <Form.Group className="mb-3">
