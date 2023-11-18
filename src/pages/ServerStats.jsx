@@ -9,7 +9,7 @@ const ServerStats = () => {
         src="https://smartcitylivinglab.iiit.ac.in/grafana/d/fhretuerh2432545/zabbix-server-dashboard?orgId=1&refresh=5s&kiosk&autofitpanels" // Replace with your URL
         title="Statistics"
         width="100%"
-        height="750px"
+        height="800px"
         frameBorder="0"
       ></iframe>
     </div>

@@ -226,6 +226,7 @@ const ComplaintForm = () => {
                           <option value="WN-FAN10FSK">Wi-SUN FAN10FSK</option>
                           <option value="WN-FAN11FSK">Wi-SUN FAN11FSK</option>
                           <option value="WN-FAN11OFDM">Wi-SUN FAN11OFDM</option>
+                          <option value="WE">Weather Monitoring</option>
                           {/* Add more options as needed */}
                         </Form.Select>
                       </InputGroup>

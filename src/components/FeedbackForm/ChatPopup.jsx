@@ -15,7 +15,7 @@ const ChatPopup = () => {
 
   return (
     <div className="chat-popup-container">
-      <div className="chat-icon" onClick={togglePopup}>
+      <div className="chat-icon" onClick={togglePopup} title="FeedBack/Complaint">
         <FaComments />
       </div>
       <Modal

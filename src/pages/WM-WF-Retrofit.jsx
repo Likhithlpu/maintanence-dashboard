@@ -105,12 +105,13 @@ useEffect(() => {
 }, [currentSlide, fetchData]);
 
 const lazyLoadIframe = (item, index) => {
+  const vertical='WM-WF-Retrofit'
   const datatable='data_waterflowdatalatest'
   if (status === 'Inactive') {
     return (
         <iframe
           title="Water Monitorning - Water Flow Analytics"
-          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/ca895582-79c6-4b57-b95c-17135ff82b44/inactive-dashboard?kiosk&refresh=5s&var-nodeid=${item}&var-datatable=${datatable}&orgId=1`}
+          src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/ca895582-79c6-4b57-b95c-17135ff82b44/inactive-dashboard?kiosk&refresh=5s&var-nodeid=${item}&var-nodeid=${vertical}&var-datatable=${datatable}&orgId=1`}
           width="100%"
           height={iframeContainerHeight}
           style={{ height: iframeContainerHeight }}

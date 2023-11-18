@@ -96,6 +96,7 @@ useEffect(() => {
 }, [currentSlide, fetchData]);
 
 const lazyLoadIframe = (item, index) => {
+  const vertical='SR-OC'
   if (status === 'Inactive') {
     return (
         <iframe
