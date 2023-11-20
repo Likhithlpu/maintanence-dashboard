@@ -17,7 +17,7 @@ const NavigationBar = () => {
           <img src={SCRCLOGO} alt="Smart City Living Lab Logo" />
         </div>
       </Link>
-      <div className="navbar__dashboard">MAINTENANCE DASHBOARD</div>
+      <div className="navbar__dashboard">Maintenance Dashboard</div>
     </nav>
   );
 };

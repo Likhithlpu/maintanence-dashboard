@@ -127,7 +127,7 @@ const lazyLoadIframe = (item, index) => {
     return (
       <iframe
         title="WiSUN Analytics"
-        src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/nodestatus/node-status?orgId=1&kiosk&refresh=5s&var-nodeid=${item}&var-tablename=${datatable}`}
+        src={`https://smartcitylivinglab.iiit.ac.in/grafana/d/nodestatus/node-status?orgId=1&kiosk&var-nodeid=${item}&var-tablename=${datatable}`}
         width="100%"
         height={iframeContainerHeight}
         style={{ height: iframeContainerHeight }}
