@@ -41,7 +41,12 @@ const ComplaintList = () => {
     try {
       await axios.put(`https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api/api/complaints/${id}/assign`, {});
       // Update the local state to remove the closed complaint
-      setComplaints((prevComplaints) => prevComplaints.filter((complaint) => complaint.sno !== id));
+      setComplaints((prevComplaints) =>
+      prevComplaints.map((complaint) =>
+        complaint.sno === id ? { ...complaint, status: 'Assigned' } : complaint
+      )
+    );
+    
     } catch (error) {
       console.error('Error Assign status in DB:', error);
     }
@@ -168,7 +173,7 @@ const ComplaintList = () => {
             onClick={() => {
               if (selectedEmail) {
                 console.log("Assigning ticket to:", selectedEmail);
-                handleAssignClick();
+                handleAssignClick(selectedComplaint.sno);
                 setShowAssignButton(false);
               } else {
                 alert("Please select an email before assigning.");
@@ -233,7 +238,6 @@ const ComplaintList = () => {
       // Print the values to the console
       console.log("Submitted Data:", submittedData);
 
-      // Your existing logic
       handleCloseComplaint(selectedComplaint.sno, issue, solution);
       setShowPopup(false);
       setIssue('');
