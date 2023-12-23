@@ -36,7 +36,16 @@ const ComplaintList = () => {
 
 
 
-  const handleAssignClick = async () => {
+  const handleAssignClick = async (id) => {
+
+    try {
+      await axios.put(`https://smartcitylivinglab.iiit.ac.in/maintenance-dashboard-api/api/complaints/${id}/assign`, {});
+      // Update the local state to remove the closed complaint
+      setComplaints((prevComplaints) => prevComplaints.filter((complaint) => complaint.sno !== id));
+    } catch (error) {
+      console.error('Error Assign status in DB:', error);
+    }
+
     try {
       console.log('Selected Complaint Info:', selectedComplaint);
   
