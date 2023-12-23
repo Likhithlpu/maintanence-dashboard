@@ -1,37 +1,156 @@
-/* styles.css */
-
 /* Table styles */
 .table-container {
-    margin-top: 80px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    padding: 20px; /* Added padding to the table */
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
+  margin-top: 80px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .close-button:hover {
-    background-color: #c82333;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  padding: 20px; /* Added padding to the table */
+}
 
-  td {
-    color: white;
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
+.close-button:hover {
+  background-color: #c82333;
+}
+
+td {
+  color: white;
+}
+
+
+/* Styles for the main popup container */
+.popup-container {
+  align-items: center;
+  display: flex;
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  width: 80%; /* Adjust as needed */
+  max-width: 400px; /* Set a maximum width */
+  margin: 40px auto;
+  color: black;
+}
+
+/* Styles for large input */
+.large-input input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+  resize: vertical;
+}
+
+/* Styles for the popup table */
+.popup-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  padding: 20px;
+  color: black;
+}
+
+/* Styles for generic input */
+input {
+  width: 100%;
+}
+
+/* Styles for popup text */
+.popup {
+  text-align: center;
+  color: black;
+}
+
+/* Styles for table cells in the popup table */
+.popup-table td {
+  padding: 10px;
+  color: black;
+}
+
+/* Styles for button container */
+.button-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line on small screens */
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Styles for buttons in the button container */
+.button-container button {
+  background-color: #060516;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Hover styles for buttons */
+.button-container button:hover {
+  background-color: darkblue;
+}
+
+/* Styles for dropdown container */
+.dropdown-container {
+  align-items: center;
+  display: flex;
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  width: 80%; /* Adjust as needed */
+  max-width: 450px; /* Set a maximum width */
+  margin: 40px auto;
+  color: black;
+  position: relative;
+}
+
+/* Styles for dropdown button in the dropdown container */
+.dropdown-container button {
+  background-color: #060516;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Styles for dropdown content */
+.dropdown-container .content {
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+/* Show dropdown content on hover */
+.dropdown-container:hover .content {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  /* Adjustments for screens with a maximum width of 600px */
+  .popup-container, .dropdown-container {
+    width: 90%; /* Adjust as needed */
+    max-width: none; /* Remove max-width for smaller screens */
   }
-  
-  
+}
